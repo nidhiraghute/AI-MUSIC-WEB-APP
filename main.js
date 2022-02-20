@@ -5,6 +5,7 @@ rightWrist_y = 0;
 leftWrist_x = 0;
 leftWrist_y = 0;
 scoreleftWrist = 0;
+scorerightWrist=0;
 song_name = "";
 
 function setup(){
@@ -31,6 +32,9 @@ function draw(){
 
     song_name = Peter_pan_song.isPlaying();
     console.log(song_name);
+    song_name = Harry_potter_theme_song.isPlaying();
+    console.log(song_name2);
+
 
     if(scoreleftWrist > 0.2){
         circle(leftWrist_x,leftWrist_y,20);
@@ -38,10 +42,12 @@ function draw(){
         if(song_name == false){
             Peter_pan_song.play();
         }
-        else{
-            console.log("Song Name: Peter Pan Song");
-            document.getElementById("song_id").innerHTML = "Song Name: Peter Pan Song";
-        }
+        if(scorerightWrist > 0.2){
+            circle(rightWrist_x,rightWrist_y,20);
+            Peter_pan_song.stop();
+            if(song_name2 == false){
+                Harry_potter_theme_song.play();
+            }
     }
 }
 
